@@ -1,9 +1,10 @@
-# Playhouse: Theatre Seat Allocation (Linked List in C)
+<img width="2560" height="1440" alt="image" src="https://github.com/user-attachments/assets/7c9af4a1-ff69-4db0-8878-63545653c645" /># Playhouse: Theatre Seat Allocation (Linked List in C)
 
 A full stack web app where **everything on the backend is written in C**: the linked list, the seat allocation logic, and the HTTP server. The frontend is plain HTML, CSS and JavaScript.
 
-**Live demo:** _add your deployed link here_
-**Repository:** _add your GitHub link here_
+**Live demo:** https://theatre-seat-allocation-jj90.onrender.com
+
+**Repository:** https://github.com/sgayatri0607-creator/theatre-seat-allocation
 
 ## Problem statement
 A theatre has rows of seats. Customers can pick specific seats, or give a group size and let the system find seats that sit side by side. Bookings can be cancelled and the seats become available again.
