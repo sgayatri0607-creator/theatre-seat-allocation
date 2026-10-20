@@ -1,0 +1,4 @@
+server
+test_runner
+*.exe
+.git

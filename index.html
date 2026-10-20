@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Playhouse Seat Allocation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500;6..96,700&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <h1>Playhouse</h1>
+    <p>Choose your seats, or tell us the size of your group and we will seat you together.</p>
+  </header>
+
+  <main class="layout">
+    <section class="hall" aria-label="Seat map">
+      <div class="stage"><span>Stage</span></div>
+      <div id="seatmap" class="seatmap"></div>
+      <div class="legend">
+        <span><i class="seat free"></i>Free</span>
+        <span><i class="seat selected"></i>Selected</span>
+        <span><i class="seat booked"></i>Booked</span>
+        <span id="counts" class="counts"></span>
+      </div>
+    </section>
+
+    <aside class="panel">
+      <div class="card">
+        <h2>Book seats</h2>
+        <label for="name">Name for the booking</label>
+        <input id="name" type="text" maxlength="40" placeholder="e.g. Priya">
+
+        <div class="choice">
+          <p id="selection" class="selection">No seats selected. Click seats on the map.</p>
+          <button id="btn-book" class="primary" disabled>Book selected seats</button>
+        </div>
+
+        <div class="or">or</div>
+
+        <div class="auto">
+          <label for="count">Group size</label>
+          <div class="auto-row">
+            <input id="count" type="number" min="1" max="10" value="2">
+            <button id="btn-auto" class="secondary">Seat us together</button>
+          </div>
+        </div>
+        <p id="message" class="message" role="status"></p>
+      </div>
+
+      <div class="card">
+        <h2>Bookings</h2>
+        <ul id="bookings" class="bookings"></ul>
+        <button id="btn-reset" class="quiet">Clear all bookings</button>
+      </div>
+    </aside>
+  </main>
+
+  <section class="listview" aria-label="Linked list view">
+    <div class="lv-head">
+      <h2>How the row is stored</h2>
+      <p>Every row is a linked list. Each seat is a node that points to the next seat. Booking a seat sets its <code>bookingId</code>; finding a block of adjacent seats means walking the list from the head.</p>
+    </div>
+    <div id="row-tabs" class="row-tabs" role="tablist"></div>
+    <div id="chain" class="chain"></div>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>

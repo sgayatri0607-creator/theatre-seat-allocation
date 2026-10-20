@@ -1,0 +1,6 @@
+server
+test_runner
+test_bin
+*.exe
+*.o
+.DS_Store

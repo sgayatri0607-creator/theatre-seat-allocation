@@ -1,0 +1,7 @@
+FROM gcc:13
+WORKDIR /app
+COPY . .
+RUN make
+ENV PORT=10000
+EXPOSE 10000
+CMD ["./server"]
